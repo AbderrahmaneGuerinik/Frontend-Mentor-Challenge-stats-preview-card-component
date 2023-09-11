@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+ :root {
+    --very-dark-blue: hsl(233, 47%, 7%);
+    --dark-desaturated-blue: hsl(244, 38%, 16%);
+    --soft-violet: hsl(277, 64%, 61%);
+    --soft-violet-gradient: hsla(277, 64%, 61%,.5);
+     
+    --white: hsl(0, 0%, 100%);
+    --slightl-transparen-white: hsla(0, 0%, 100%, 0.75);
+    --slightly-transparent-white: hsla(0, 0%, 100%, 0.9);
+
+    --weight-light: 400;
+    --weight-bold: 700;
+
+ }
+ 
+ *,
+ *::before,
+ *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+ }
+
+ html {
+    font-size: 62.5%;
+ }
+
+ body {
+    min-height: 100vh;
+ }
+
+ main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--very-dark-blue);
+ }
+
+ .container {
+    width: min(95%, 95rem);
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--dark-desaturated-blue);
+    height: 40rem;
+    border-radius: 13px;
+    overflow: hidden;
+    animation: anim 3s;
+ }
+
+ .container__left {
+    width: calc(100% / 2);
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ }
+
+ .container__heading {
+    font-size: 3.2rem;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 3rem;
+    color: var(--white);
+    transition: all .2s;
+ }
+
+ .container__span {
+    color: var(--soft-violet);
+ }
+
+ .container__description {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 1.5rem;
+    font-weight: var(--weight-light);
+    line-height: 1.9rem;
+    margin-bottom: 7rem;
+    color: var(--slightl-transparen-white);
+ }
+
+ .container__stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 90%;
+ }
+
+ .container__state {
+    transition: all .3s;
+    backface-visibility: hidden;
+ }
+
+ .container__number {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 2.4rem;
+    font-weight: var(--weight-bold);
+    margin-bottom: .7rem;
+    color: var(--white);
+ }
+
+ .container__word {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: var(--weight-light);
+    color: var(--slightl-transparen-white);
+ }
+
+ .container__image {
+    width: 100%;
+    height: 100%;
+ }
+
+ .container__right {
+    height: 100%;
+    width: 50%;
+    position: relative;
+ }
+
+ .container__right::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--soft-violet-gradient);
+ }
+
+ @media only screen and (max-width: 50em) {
+    html {
+        font-size: 50%;
+    }
+ }
+
+ @media only screen and (max-width: 37.5em) {
+     .container {
+        height: 50rem;
+     }
+     .container__left {
+        padding: 1rem;
+     }
+     .container__stats {
+        width: 100%;
+     }
+ }
+
+ @media only screen and (max-width: 28.125em) {
+    .container__left {
+       padding: .5rem;
+    }
+     html {
+        font-size: 40%;
+     }
+}
+
+@media only screen and (max-width: 23.4375em) {
+   .container {
+    flex-direction: column-reverse;
+    height: 100rem;
+    width: 70%;
+   }
+   .container__left {
+    height: 50%;
+    width: 100%;
+    padding-inline: 5rem;
+   }
+   .container__heading {
+    margin-bottom: 1rem;
+   }
+   .container__description {
+    margin-bottom: 1.8rem;
+   }
+   .container__right {
+    height: 50%;
+    width: 100%;
+   }
+   .container__stats {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+   }
+}
+
+@media only screen and (max-width: 18.75em) {
+  .container {
+    height: 130rem;
+  }
+} 
+
+@media only screen and (max-width: 13.75em) {
+    .container {
+      height: 145rem;
+    }
+  } 
+  
+
+@keyframes anim{
+    0% {
+        width: 0;
+    }
+    100% {
+        width: min(95%, 95rem);
+    }
+}
+
+@media(hover:hover){
+    .container__heading:hover {
+        transform: skewY(5deg);
+        cursor: pointer;
+    }
+
+    .container__state:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}
+
